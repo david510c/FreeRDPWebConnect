@@ -44,10 +44,10 @@ RUN		apt-get update \
 		&& a2dissite default-ssl \
 
 # Install FreeRDPWebConnect
-		&& git clone https://github.com/FreeRDP/FreeRDP-WebConnect.git
+RUN		git clone https://github.com/FreeRDP/FreeRDP-WebConnect.git \
+		&& . /FreeRDP-WebConnect/install_prereqs.sh" \
+		&& . /FreeRDP-WebConnect/setup-all.sh" -f -i -d
 
-RUN		. /FreeRDP-WebConnect/install_prereqs.sh" \
-CMD		&& . /FreeRDP-WebConnect/setup-all.sh" -f -i -d
 COPY		/FreeRDP-WebConnect/wsgate/build/webroot /var/www
 
 # Start Apache
