@@ -46,8 +46,8 @@ RUN		apt-get update \
 # Install FreeRDPWebConnect
 		&& git clone https://github.com/FreeRDP/FreeRDP-WebConnect.git
 
-CMD		bash "/FreeRDP-WebConnect/install_prereqs.sh"
-CMD		bash "/FreeRDP-WebConnect/setup-all.sh" -f -i -d
+CMD		["/FreeRDP-WebConnect/install_prereqs.sh"]
+CMD		["/FreeRDP-WebConnect/setup-all.sh" -f -i -d]
 COPY		/FreeRDP-WebConnect/wsgate/build/webroot /var/www
 
 # Start Apache
