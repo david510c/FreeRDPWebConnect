@@ -6,7 +6,7 @@ RUN 			apt-get update \
 				&& apt-get install git -y \
 				&& git clone https://github.com/FreeRDP/FreeRDP-WebConnect.git
 
-CMD 			. /FreeRDP-WebConnect/install_prereqs.sh
-CMD 			. /FreeRDP-WebConnect/setup-all.sh -f -i -d
+CMD 			[. /FreeRDP-WebConnect/install_prereqs.sh]
+CMD 			[. /FreeRDP-WebConnect/setup-all.sh -f -i -d]
 
 EXPOSE 			80 443
