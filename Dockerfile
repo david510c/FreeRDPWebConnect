@@ -9,4 +9,6 @@ RUN 			apt-get update \
 CMD 			[. /FreeRDP-WebConnect/install_prereqs.sh]
 CMD 			[. /FreeRDP-WebConnect/setup-all.sh -f -i -d]
 
+ENTRYPOINT 		[ /bin/bash ]
+
 EXPOSE 			80 443
