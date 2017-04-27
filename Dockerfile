@@ -4,7 +4,7 @@ MAINTAINER 		David Chen <david@davidchen.blog>
 
 RUN 			apt-get update \
 				&& apt-get install sudo cmake libboost-all-dev FreeRDP -y \
-				&& git clone https://github.com/FreeRDP/FreeRDP-WebConnect.git
+				&& git clone https://github.com/david510c/FreeRDP-WebConnect.git
 
 CMD 			[. /FreeRDP-WebConnect/setup-all.sh -f]
 
