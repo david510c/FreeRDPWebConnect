@@ -1,9 +1,9 @@
- FROM 			debian
+FROM 			python
 
 MAINTAINER 		David Chen <david@davidchen.blog>
 
 RUN 			apt-get update \
-				&& apt-get install sudo git build-essential cmake libblkid-dev e2fslibs-dev libboost-all-dev libaudit-dev FreeRDP -y \
+				&& apt-get install cmake libboost-all-dev FreeRDP -y \
 				&& git clone https://github.com/FreeRDP/FreeRDP-WebConnect.git
 
 CMD 			[. /FreeRDP-WebConnect/setup-all.sh -f]
