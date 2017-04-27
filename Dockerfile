@@ -1,13 +1,12 @@
-FROM 			ubuntu:14.04
+FROM 			python
 
 MAINTAINER 		David Chen <david@davidchen.blog>
 
 RUN 			apt-get update \
-				&& apt-get install git -y \
+				&& apt-get install sudo git build-essential cmake libboost-all-dev FreeRDP -y \
 				&& git clone https://github.com/FreeRDP/FreeRDP-WebConnect.git
 
-CMD 			[. /FreeRDP-WebConnect/install_prereqs.sh]
-CMD 			[. /FreeRDP-WebConnect/setup-all.sh -f -i -d]
+CMD 			[. /FreeRDP-WebConnect/setup-all.sh -f]
 
 ENTRYPOINT 		[ /bin/bash ]
 
